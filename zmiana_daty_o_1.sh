@@ -15,6 +15,7 @@ fi
 # Inicjalizowanie początkowego czasu
 current_time=$start_timestamp
 
+i=0
 # Pętla po wszystkich plikach .jpg w folderze
 for file in *.jpg; do
   # Sprawdzenie, czy to plik
@@ -28,6 +29,7 @@ for file in *.jpg; do
 
   # Usunięcie kopii zapasowej, którą tworzy exiftool
   rm -f "${file}_original"
+  i=$((i + 1))
 done
 
-echo "Daty w metadanych zostały zaktualizowane dla wszystkich plików JPG."
+echo "Daty w metadanych zostały zaktualizowane dla $i plików JPG."
